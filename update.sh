@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -uex
+
 REPOSRC=$GITREPO
 LOCALREPO=$LOCALDEST
 
@@ -8,10 +10,14 @@ LOCALREPO_VC_DIR=$LOCALREPO/.git
 
 if [ ! -d $LOCALREPO_VC_DIR ]
 then
+    echo Cloning repository... 
     git clone $REPOSRC $LOCALREPO
 else
+    echo Repository exists: updating repository... 
     cd $LOCALREPO
     git pull $REPOSRC
 fi
 
 # End
+/bin/sh
+exec "$@"
