@@ -6,5 +6,5 @@ RUN apk add --update --no-cache git nodejs npm && \
 WORKDIR /$LOCALDEST
 COPY update.sh /update.sh
 RUN chmod +rx /update.sh
-CMD ["sh", "/update.sh"]
+CMD ["/update.sh"]
 VOLUME ["/$LOCALDEST"]
