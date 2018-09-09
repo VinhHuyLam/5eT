@@ -5,8 +5,7 @@ RUN apk add --update --no-cache git nodejs npm bash && \
     npm install -g simple-autoreload-server
 WORKDIR /$LOCALDEST
 COPY update.sh entrypoint
-RUN chmod +rx entrypoint && \
-    ln -s /$LOCALDEST/5etools.html /$LOCALDEST/index.html
+RUN chmod +rx entrypoint
 ENTRYPOINT ["./entrypoint"]
 CMD npm run dev-server
 VOLUME ["/$LOCALDEST"]
