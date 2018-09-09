@@ -3,9 +3,8 @@ EXPOSE 8080
 ENV GITREPO=https://github.com/TheGiddyLimit/TheGiddyLimit.github.io.git/ LOCALDEST=5eTools
 RUN apk add --update --no-cache git nodejs npm && \
     npm install -g simple-autoreload-server
-COPY update.sh /entrypoint
-RUN chmod +rx /entrypoint
-ENTRYPOINT ["./entrypoint"]
 WORKDIR /$LOCALDEST
-CMD npm run dev-server
+COPY update.sh /update.sh
+RUN chmod +rx /update.sh
+CMD ["sh", "update.sh"]
 VOLUME ["/$LOCALDEST"]
