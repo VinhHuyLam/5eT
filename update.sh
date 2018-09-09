@@ -18,5 +18,4 @@ else
 fi
 
 # End
-/bin/sh
 exec "$@"
