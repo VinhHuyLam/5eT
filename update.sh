@@ -1,5 +1,5 @@
 #!/bin/sh
-set -uex
+set -ux
 
 REPOSRC=$GITREPO
 LOCALREPO=$LOCALDEST
