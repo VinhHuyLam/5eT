@@ -16,6 +16,6 @@ else
     cd $LOCALREPO
     git pull $REPOSRC
 fi
-
+ln -s /$LOCALDEST/5etools.html /$LOCALDEST/index.html
 npm run dev-server
 # End
