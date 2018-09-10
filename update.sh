@@ -17,5 +17,6 @@ else
     git pull $REPOSRC
 fi
 ln -s /$LOCALDEST/5etools.html /$LOCALDEST/index.html
+chmod -R 755 /$LOCALDEST
 npm run dev-server
 # End
