@@ -11,13 +11,11 @@ if [ ! -d $LOCALREPO_VC_DIR ]
 then
     echo Cloning repository... 
     git clone $REPOSRC $LOCALREPO
-    cd $LOCALREPO
     npm run dev-server
 else
     echo Repository exists: syncing repository... 
     cd $LOCALREPO
     git pull $REPOSRC
-    cd $LOCALREPO
     npm run dev-server
 fi
 
