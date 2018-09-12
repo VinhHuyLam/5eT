@@ -6,6 +6,6 @@ RUN apk add --update --no-cache git nodejs npm && \
 COPY update.sh /update
 #git pull every 12hrs via cron
 RUN chmod +rx /update && \
-    (crontab -l -r; echo "$CRONEXPR /update"$'\n')| crontab -
+    (crontab -l; echo "$CRONEXPR /update"$'\n')| crontab -
 CMD ["/update"]
 VOLUME ["/$LOCALDEST"]
