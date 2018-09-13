@@ -15,6 +15,7 @@ else
     echo "Repository exists: syncing repository..." 
     cd $LOCALREPO
     git pull $REPOSRC
+    rm /$LOCALDEST/index.html
 fi
 ln -s /$LOCALDEST/5etools.html /$LOCALDEST/index.html
 chmod -R 644 /$LOCALDEST
