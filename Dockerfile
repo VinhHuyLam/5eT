@@ -7,5 +7,5 @@ COPY update.sh /update
 #git pull every 12hrs via cron
 RUN chmod +rx /update && \
     echo "$CRONEXPR /update"$'\n' >> git-pull 2>&1
-CMD "/update" && cron /git-pull
+CMD "/update" && crond /git-pull
 VOLUME ["/$LOCALDEST"]
