@@ -1,7 +1,7 @@
 FROM alpine:latest
 EXPOSE 8080
 ENV GITREPO=https://github.com/TheGiddyLimit/TheGiddyLimit.github.io.git/ LOCALDEST=5eTools CRONEXPR="0 0 0/12 ? * * *"
-RUN apk add --update --no-cache git nodejs npm cron && \
+RUN apk add --update --no-cache git nodejs npm dcron && \
     npm install -g simple-autoreload-server
 COPY update.sh /update
 #git pull every 12hrs via cron
